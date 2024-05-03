@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="Project1._0.View.Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            
+            <%if (Session["user"] == null)
+                {%>
+            <asp:Button ID="btnLogin" runat="server" Visible="true" Text="Login" CausesValidation="false" OnClick="btnLogin_Click" />
+            <asp:Button ID="btnRegister" runat="server" Visible="true" Text="Register" CausesValidation="false" OnClick="btnRegister_Click" />
+            <%}
+             else
+                {%>
+            
+            <asp:Button ID="btnHome" runat="server" Text="Home" CausesValidation="false" OnClick="btnHome_Click" />
+            <asp:Button ID="btnManageSupp" runat="server" Text="Manage Supplement" CausesValidation="false" OnClick="btnManageSupp_Click" />
+            <asp:Button ID="btnOrderQueue" runat="server" Text="Order Queue" CausesValidation="false" OnClick="btnOrderQueue_Click" />
+            <asp:Button ID="btnOrderSupp" runat="server" Text="Order Supplement" CausesValidation="false" Visible="true" OnClick="btnOrderSupp_Click" />
+            <asp:Button ID="btnHistory" runat="server" Text="History" Visible="true" CausesValidation="false" OnClick="btnHistory_Click" />
+            <asp:Button ID="btnProfile" runat="server" Text="Profile" Visible="true" CausesValidation="false" OnClick="btnProfile_Click" />
+            <asp:Button ID="btnTransactionReport" runat="server" Text="Transaction Report" CausesValidation="false" OnClick="btnTransactionReport_Click" />
+            <asp:Button ID="btnLogout" runat="server" Text="Logout" Visible="true" CausesValidation="false" OnClick="btnLogout_Click" />
+            <%} %>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        
+    </form>
+</body>
+</html>
